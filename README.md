@@ -4,6 +4,11 @@
 
 The project is a Rails API designed as a good practice example to use as a reference for all future projects.
 
+## Versions
+
+*Ruby 3.2.2
+*Rails 7.1.5
+
 ## Getting started
 
 Copy the `README-default.md` file for yourself and start editing! At the root of
@@ -49,6 +54,12 @@ This project makes it easy to:
 * Bootstrap your open-source project properly
 * Make sure everyone gets what you're trying to achieve with your project
 * Follow simple instructions for a perfect `README.md`
+
+## Diagrams
+
+### Database schema
+
+<https://dbdiagram.io/d/Marketplace_API-6740dc6ce9daa85aca6aebf0>
 
 ## Contributing
 
