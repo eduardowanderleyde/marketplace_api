@@ -1,0 +1,17 @@
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: true
+
+Metrics/CyclomaticComplexity:
+  Max: 7
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Metrics/MethodLength:
+  Max: 10
+
+Layout/LineLength:
+  Max: 120
