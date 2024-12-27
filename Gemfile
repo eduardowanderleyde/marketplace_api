@@ -21,9 +21,10 @@ gem 'rswag-ui'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
-gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'bootsnap', require: false
-gem "rack-cors"
+gem 'devise', '~> 4.9', '>= 4.9.4'
+gem 'rack-cors'
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -33,14 +34,14 @@ gem 'rubocop-rspec_rails'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
-  gem 'pry-rails', '~> 0.3.11'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'
   gem 'ffaker', '~> 2.23'
+  gem 'pry-rails', '~> 0.3.11'
   gem 'rspec-rails', '~> 7.0.0'
   gem 'rswag-specs'
   gem 'rubocop', '~> 1.69', '>= 1.69.1', require: false
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'
 end
 
 group :test do
