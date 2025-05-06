@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users
   mount Rswag::Api::Engine => '/api-docs'
   mount Rswag::Ui::Engine => '/api-docs'
@@ -14,4 +15,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  root to: 'home#index'
 end
