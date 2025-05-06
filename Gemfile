@@ -4,35 +4,27 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+# ✅ Updated Rails to patch CVE in ActionPack
+gem 'rails', '>= 7.1.5.1'
 
-# Use postgresql as the database for Active Record
+# Core dependencies
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rswag-api'
 gem 'rswag-ui'
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-# gem "jbuilder"
-
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'rack-cors'
 gem 'solargraph', '~> 0.50.0'
 gem 'tzinfo-data', platforms: %i[windows jruby]
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
 gem 'rubocop-rspec_rails'
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
+
+# 🚨 Pinned gems to fix known CVEs reported by bundler-audit
+gem 'rack', '>= 3.1.12'                       # Fixes multiple rack vulnerabilities
+gem 'rails-html-sanitizer', '>= 1.6.1'        # Fixes XSS issues
+gem 'net-imap', '>= 0.5.7'                    # Prevents DoS vulnerability
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'
   gem 'ffaker', '~> 2.23'
@@ -50,6 +42,6 @@ group :test do
 end
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # Optional performance boost on large apps (commented out by default)
   # gem "spring"
 end
